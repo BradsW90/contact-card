@@ -1,7 +1,8 @@
 import { Tooltip, Toast, Popover } from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { initDb, getDb, postDb } from "./database";
+import { initDb, getDb, postDb, deleteDb } from "./database";
 import { fetchCards } from "./cards";
+import { toggleForm, clearForm } from "./form";
 
 import "./form";
 //import "./submit";
@@ -51,3 +52,11 @@ form.addEventListener("submit", (event) => {
   // Reload the DOM
   fetchCards();
 });
+
+window.deleteCard = (e) => {
+  let id = parseInt(e.id);
+  //delete the card
+  deleteDb(id);
+  //reload the dom
+  fetchCards();
+};
