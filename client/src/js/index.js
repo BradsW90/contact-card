@@ -1,6 +1,6 @@
 import { Tooltip, Toast, Popover } from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { initDb } from "./database";
+import { initDb, getDb, postDb } from "./database";
 
 import "./form";
 import "./submit";
